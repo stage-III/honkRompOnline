@@ -29,7 +29,7 @@ fetch(url)
 
       const startDate = new Date(event.start.dateTime);
 
-      li.innerHTML = `${startDate.getFullDate()} &bigstar; ${event.summary} ${tickets}`;
+      li.innerHTML = `${startDate.toLocaleDateString()} &bigstar; ${event.summary} ${tickets}`;
 
       container.appendChild(li);
     });
