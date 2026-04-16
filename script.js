@@ -1,4 +1,5 @@
 const API_KEY = "AIzaSyA5BT-4B2IICqKA8mwG5eyajHu4S2ACICY";
+
 const CALENDAR_ID =
   "220abdded995df9844ade3dce297295f6d13b13b67a4d6cd2f1c8da267922757@group.calendar.google.com";
 
@@ -20,7 +21,7 @@ fetch(url)
       const li = document.createElement("li");
       let tickets = "";
 
-      if (event.description != null) {
+      if (isValidHttpUrl(event.description)) {
         tickets = `&bigstar; <a
             href="${event.description}"
             >Tickets</a
@@ -35,3 +36,16 @@ fetch(url)
     });
   })
   .catch((error) => console.error("Error loading calendar: ", error));
+
+
+function isValidHttpUrl(string) {
+  let url;
+
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;
+  }
+
+  return url.protocol === "http:" || url.protocol === "https:"
+}
