@@ -1,0 +1,19 @@
+{
+    "folders": [
+        {
+            "name": "Honksite",
+            "path": "."
+        }
+    ],
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "Docker: Build and Run",
+                "type": "shell",
+                "command": "docker build -t honk-romp . && docker compose up -d",
+                "group": "build"
+            }
+        ]
+    }
+}

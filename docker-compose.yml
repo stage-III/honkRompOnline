@@ -1,0 +1,12 @@
+services:
+  node:
+    image: ghcr.io/stage-iii/honk-romp:latest
+    container_name: honkromp
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

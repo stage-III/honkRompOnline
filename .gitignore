@@ -1,2 +1,4 @@
 site.md
 settings.json
+.env
+node_modules/*
