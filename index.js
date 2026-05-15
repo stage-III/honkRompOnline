@@ -40,7 +40,7 @@ app.get("/", async (req, res) => {
 
         li =
           li +
-          `${startDate.toLocaleDateString()} &bigstar; ${event.summary} ${tickets}</li>`;
+          `${startDate.toLocaleDateString('en-gb')} &bigstar; ${event.summary} ${tickets}</li>`;
         container += li;
       });
       const result = html.replace("<!-- GIG_LIST -->", container);
