@@ -7,13 +7,13 @@ const fs = require("fs");
 const API_KEY = process.env.API_KEY;
 const CALENDAR_ID = process.env.CALENDAR_ID;
 const url =
-`https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?` +
-new URLSearchParams({
+  `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?` +
+  new URLSearchParams({
     key: API_KEY,
     singleEvents: true,
     orderBy: "startTime",
     timeMin: new Date().toISOString(),
-});
+  });
 
 app.set("trust proxy", 1)
 app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev"));
@@ -26,11 +26,11 @@ app.get("/", async (req, res) => {
     .then((data) => {
       let container = "";
       data.items.forEach((event) => {
-        let li = "<li>";
+        let tr = "<tr>";
         let tickets = "";
 
         if (isValidHttpUrl(event.description)) {
-          tickets = `&bigstar; <a
+          tickets = `<a
                 href="${event.description}"
                 >Tickets</a
                 >`;
@@ -38,10 +38,10 @@ app.get("/", async (req, res) => {
 
         const startDate = new Date(event.start.dateTime);
 
-        li =
-          li +
-          `${startDate.toLocaleDateString('en-gb')} &bigstar; ${event.summary} ${tickets}</li>`;
-        container += li;
+        tr =
+          tr +
+          `<td>${startDate.toLocaleDateString('en-gb')}</td><td>${event.summary}</td><td>${tickets}</td></tr>`;
+        container += tr;
       });
       const result = html.replace("<!-- GIG_LIST -->", container);
       res.send(result);

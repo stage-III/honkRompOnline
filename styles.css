@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap');
+
 @font-face {
   font-family: "CooperBlack";
   src: url("fonts/CB.ttf") format("truetype");
@@ -10,26 +12,43 @@
 }
 
 a {
-    color: rgb(255, 242, 0);
-    text-shadow: 2px -1px rgb(237, 0, 142), -2px 1px rgb(0, 176, 240);
+  font-family: 'CooperBlack', serif;
+  font-size: 80%;
+  color: rgb(255, 242, 0);
+  text-shadow: 2px -1px rgb(237, 0, 142), -2px 1px rgb(0, 176, 240);
   text-decoration-line: none;
-  
 }
 
 a:hover {
-  text-shadow: 2px 1px rgb(237, 0, 142), -2px -1px rgb(0, 176, 240);;
+  text-shadow: 2px 1px rgb(237, 0, 142), -2px -1px rgb(0, 176, 240);
+  ;
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+#dates {
+  width: 100%;
+  justify-content: center;
+  display: flex;
 }
 
-li {
-  padding: 0 0 1% 0;
-  border: 1px;
-  border-color: aliceblue;
+#dates table {
+  font-family: 'Barlow Condensed', sans-serif;
+  max-width: 1500px;
+  width: 85%;
+  border-collapse: collapse;
+}
+
+#gigList td {
+  padding: 2% 1%;
+  vertical-align: top;
+}
+
+#gigList td:nth-child(2) {
+  max-width: 300px;
+}
+
+#gigList td:nth-child(1),
+#gigList td:nth-child(3) {
+  white-space: nowrap;
 }
 
 h3 {
@@ -37,7 +56,7 @@ h3 {
 }
 
 body {
-  font-family: "CooperBlack", serif;
+  font-family: 'CooperBlack', serif;
   font-size: 210%;
   color: white;
   background-color: black;
@@ -48,7 +67,7 @@ body {
   position: relative;
 }
 
-body::after{
+body::after {
   content: '';
   display: block;
   height: 69px;
