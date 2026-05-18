@@ -15,7 +15,7 @@ const url =
     timeMin: new Date().toISOString(),
   });
 
-app.set("trust proxy", 1)
+app.set("trust proxy", 1);
 app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev"));
 app.use(helmet());
 
@@ -32,6 +32,7 @@ app.get("/", async (req, res) => {
         if (isValidHttpUrl(event.description)) {
           tickets = `<a
                 href="${event.description}"
+                target="_blank"
                 >Tickets</a
                 >`;
         }
@@ -40,7 +41,7 @@ app.get("/", async (req, res) => {
 
         tr =
           tr +
-          `<td>${startDate.toLocaleDateString('en-gb')}</td><td>${event.summary}</td><td>${tickets}</td></tr>`;
+          `<td>${startDate.toLocaleDateString("en-gb")}</td><td>${event.summary}</td><td>${tickets}</td></tr>`;
         container += tr;
       });
       const result = html.replace("<!-- GIG_LIST -->", container);
