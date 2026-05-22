@@ -26,7 +26,7 @@ app.get("/", async (req, res) => {
     .then((data) => {
       let container = "";
       data.items.forEach((event) => {
-        let tr = "<tr>";
+        let tr = '<tr>';
         let tickets = "";
 
         if (isValidHttpUrl(event.description)) {

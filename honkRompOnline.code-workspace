@@ -13,6 +13,12 @@
                 "type": "shell",
                 "command": "docker build -t honk-romp . && docker compose up -d",
                 "group": "build"
+            },
+            {
+                "label": "Dev: Run Locally",
+                "type": "shell",
+                "command": "npm run dev",
+                "group": "test"
             }
         ]
     }

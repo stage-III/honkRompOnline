@@ -35,6 +35,7 @@ a:hover {
   max-width: 1200px;
   width: 100%;
   border-collapse: collapse;
+  margin: 0% 2% 0% 2%;
 }
 
 #gigList td {
@@ -49,6 +50,7 @@ a:hover {
 #gigList td:nth-child(1),
 #gigList td:nth-child(3) {
   white-space: nowrap;
+  width: 210px;
 }
 
 h3 {
