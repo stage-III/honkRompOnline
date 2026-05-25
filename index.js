@@ -6,7 +6,7 @@ const helmet = require("helmet");
 const fs = require("fs");
 const API_KEY = process.env.API_KEY;
 const CALENDAR_ID = process.env.CALENDAR_ID;
-const url =
+const getUrl = () =>
   `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?` +
   new URLSearchParams({
     key: API_KEY,
@@ -21,7 +21,7 @@ app.use(helmet());
 
 app.get("/", async (req, res) => {
   const html = await fs.promises.readFile(__dirname + "/index.html", "utf-8");
-  fetch(url)
+  fetch(getUrl())
     .then((response) => response.json())
     .then((data) => {
       let container = "";
