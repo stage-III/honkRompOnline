@@ -142,7 +142,7 @@ footer {
 
 .modal-title {
   color: rgb(255, 255, 255);
-  font-size: 80%;
+  font-size: 100%;
   margin: 0 0 1.5rem;
 }
 
@@ -175,7 +175,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  font-size: 70%;
+  font-size: 100%;
 }
 
 .stream-list img {
