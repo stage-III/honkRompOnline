@@ -66,28 +66,22 @@ body {
   min-height: 100dvh;
   margin: 0;
   padding: 0;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-body::after {
-  content: "";
-  display: block;
-  height: 69px;
-  margin: 0;
-  padding: 0;
+main {
+  flex: 1;
 }
 
 footer {
   font-size: 90%;
-  position: absolute;
-  bottom: 0;
   width: 100%;
   background-color: black;
   color: white;
   text-align: center;
-  height: 69px;
   margin: 0;
-  padding: 0;
+  padding: 1rem 0;
 }
 
 #listen-modal-toggle {
